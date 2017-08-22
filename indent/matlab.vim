@@ -13,6 +13,12 @@ let s:functionWithoutEndStatement = 0
 setlocal indentexpr=GetMatlabIndent()
 setlocal indentkeys=!,o,O=end,=case,=else,=elseif,=otherwise,=catch
 
+" Set indent dimensions to match the MATLAB editor
+setlocal tabstop=4         " The width of a TAB, it is the width vim interprets the \t as
+setlocal shiftwidth=4      " Indents width 
+setlocal softtabstop=4     " Sets the number of columns for a TAB
+setlocal expandtab         " Expand TABs to spaces
+
 " Only define the function once.
 if exists("*GetMatlabIndent")
   finish
